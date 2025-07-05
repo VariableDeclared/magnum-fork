@@ -9,6 +9,7 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+# pjds -- modified from Fedora driver.
 
 import os
 from urllib import parse as urlparse
@@ -21,7 +22,7 @@ CONF = magnum.conf.CONF
 
 
 class UBK8sTemplateDefinition(kftd.UbuntuK8sTemplateDefinition):
-    """Kubernetes template for a Fedora Atomic VM."""
+    """Kubernetes template for a Ubuntu Atomic VM."""
 
     @property
     def driver_module_path(self):
