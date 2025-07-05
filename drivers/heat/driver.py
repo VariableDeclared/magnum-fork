@@ -373,7 +373,6 @@ class FedoraKubernetesDriver(KubernetesDriver):
         }
         osc.heat().stacks.update(cluster.stack_id, **fields)
 
-
 class UbuntuKubernetesDriver(KubernetesDriver):
     """Base driver for Kubernetes clusters."""
 
@@ -422,7 +421,7 @@ class UbuntuKubernetesDriver(KubernetesDriver):
     def rotate_ca_certificate(self, context, cluster):
         cluster_template = conductor_utils.retrieve_cluster_template(context,
                                                                      cluster)
-        if cluster_template.cluster_distro not in ["ubuntu"]:
+        if cluster_template.cluster_distro not in ["ubuntu-ca"]:
             raise exception.NotSupported("Rotating the CA certificate is "
                                          "not supported for cluster with "
                                          "cluster_distro: %s." %
